@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.10
 
 MAINTAINER Nils Jørgen Mittet <njmittet@gmail.com>
 
