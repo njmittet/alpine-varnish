@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+
+varnishd -a http=:80,HTTP -p feature=+http2 -s malloc,$VARNISH_CACHE_SIZE -F -f $VCL_DIR/$VCL_FILE
