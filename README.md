@@ -43,7 +43,7 @@ A dummy backend JSON REST API is provided in order to ease testing:
 2. Serve the file using:
 
 ```SH
-# The default JSON server port is 3000, but since the default VCL-file assues a backend rinning on port 8080.
+# The default JSON server port is 3000, but the default VCL-file assumes a backend running on port 8080.
 $ json-server --watch backend/db.json --port 8080
 ```
 
@@ -103,7 +103,7 @@ To change the port Varnish listens on, both the Varnish port and the port expose
 docker run -it --rm --name myvarnish --network host -e VARNISH_PORT=9000 --expose=9000 njmittet/alpine-varnish
 ```
 
-### Use As Base Image
+### Use as Base Image
 
 Create an image containing your own VCL-file by creating a Dockerfile with the following content:
 
