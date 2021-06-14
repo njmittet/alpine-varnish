@@ -44,13 +44,13 @@ A dummy backend JSON REST API is provided in order to ease testing:
 
 ```SH
 # The default JSON server port is 3000, but the default VCL-file assumes a backend running on port 8080.
-$ json-server --watch backend/db.json --port 8080
+json-server --watch backend/db.json --port 8080
 ```
 
 Verify that the dummy backend is running with:
 
 ```SH
-$ curl localhost:8080/posts
+curl localhost:8080/posts
 # Should return:
 [
   {
@@ -76,7 +76,7 @@ docker run -it --rm --name myvarnish --network host njmittet/alpine-varnish
 Verify that Varnish works by requesting on port 80:
 
 ```SH
-$ curl localhost/posts
+curl localhost/posts
 # Should return:
 [
   {
@@ -91,10 +91,10 @@ Run with a different VCL-file using [bind mounts](https://docs.docker.com/v17.09
 
 ```SH
 # Replace the default.vcl file.
-$ docker run -it --rm --name myvarnish --network host -v $(pwd)/alt.vcl:/etc/varnish/default.vcl:ro njmittet/alpine-varnish
+docker run -it --rm --name myvarnish --network host -v $(pwd)/alt.vcl:/etc/varnish/default.vcl:ro njmittet/alpine-varnish
 
 # Use a VCL file with a different name.
-$ docker run -it --rm --name myvarnish --network host -v $(pwd)/alt.vcl:/etc/varnish/alt.vcl:ro -e VCL_FILE='alt.vcl' njmittet/alpine-varnish
+docker run -it --rm --name myvarnish --network host -v $(pwd)/alt.vcl:/etc/varnish/alt.vcl:ro -e VCL_FILE='alt.vcl' njmittet/alpine-varnish
 ```
 
 To change the port Varnish listens on, both the Varnish port and the port exposed by Docker must be changed:
@@ -114,8 +114,8 @@ COPY alt.vcl $VCL_DIR/default.vcl
 
 ```SH
 # Build and run the container.
-$ docker build -t myvarnish .
-$ docker run -it --rm --name myvarnish --network host myvarnish
+docker build -t myvarnish .
+docker run -it --rm --name myvarnish --network host myvarnish
 ```
 
 ## VCL Examples
