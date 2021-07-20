@@ -5,7 +5,7 @@ A [Docker](https://www.docker.com/) image running
 
 This README only aims at getting you up and running with the Docker image, and documents only a very basic usage of Varnish. Consult the [Varnish Documentation](https://varnish-cache.org/docs/) for more details.
 
-For details about the Docker image and related builds, see the [Docker Hub](https://hub.docker.com/r/njmittet/alpine-varnish/) page.
+See the [image on Docker Hub](https://hub.docker.com/r/njmittet/alpine-varnish/).
 
 ## Versions
 
